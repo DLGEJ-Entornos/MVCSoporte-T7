@@ -168,8 +168,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AvisosController.cs" />
+    <Compile Include="Controllers\EmpleadosController.cs" />
+    <Compile Include="Controllers\EquiposController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocalizacionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TipoAveriasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -241,6 +246,31 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Avisos\Create.cshtml" />
+    <Content Include="Views\Avisos\Delete.cshtml" />
+    <Content Include="Views\Avisos\Details.cshtml" />
+    <Content Include="Views\Avisos\Edit.cshtml" />
+    <Content Include="Views\Avisos\Index.cshtml" />
+    <Content Include="Views\Empleados\Create.cshtml" />
+    <Content Include="Views\Empleados\Delete.cshtml" />
+    <Content Include="Views\Empleados\Details.cshtml" />
+    <Content Include="Views\Empleados\Edit.cshtml" />
+    <Content Include="Views\Empleados\Index.cshtml" />
+    <Content Include="Views\Equipos\Create.cshtml" />
+    <Content Include="Views\Equipos\Delete.cshtml" />
+    <Content Include="Views\Equipos\Details.cshtml" />
+    <Content Include="Views\Equipos\Edit.cshtml" />
+    <Content Include="Views\Equipos\Index.cshtml" />
+    <Content Include="Views\Localizaciones\Create.cshtml" />
+    <Content Include="Views\Localizaciones\Delete.cshtml" />
+    <Content Include="Views\Localizaciones\Details.cshtml" />
+    <Content Include="Views\Localizaciones\Edit.cshtml" />
+    <Content Include="Views\Localizaciones\Index.cshtml" />
+    <Content Include="Views\TipoAverias\Create.cshtml" />
+    <Content Include="Views\TipoAverias\Delete.cshtml" />
+    <Content Include="Views\TipoAverias\Details.cshtml" />
+    <Content Include="Views\TipoAverias\Edit.cshtml" />
+    <Content Include="Views\TipoAverias\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
