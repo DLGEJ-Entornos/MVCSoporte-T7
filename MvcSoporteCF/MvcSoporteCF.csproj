@@ -174,8 +174,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Aviso.cs" />
+    <Compile Include="Models\Empleado.cs" />
+    <Compile Include="Models\Equipo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Localizacion.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SoporteContexto.cs" />
+    <Compile Include="Models\TipoAveria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
