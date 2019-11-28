@@ -1,12 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @* Añadido para Datapicker de JQueryUIHelpers.Mvc5 *@
+    @Styles.Render("~/Content/themes/base/css")
 
 </head>
 <body>
@@ -25,11 +27,11 @@
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Empleados", "Empleados", "Home")</li>
-                    <li>@Html.ActionLink("Equipos", "Equipos", "Home")</li>
-                    <li>@Html.ActionLink("Avisos", "Avisos", "Home")</li>
-                    <li>@Html.ActionLink("Localizaciones", "Localizaciones", "Home")</li>
-                    <li>@Html.ActionLink("Averias", "TipoAverias", "Home")</li>
+                    <li>@Html.ActionLink("Empleados", "Index", "Empleados")</li>
+                    <li>@Html.ActionLink("Equipos", "Index", "Equipos")</li>
+                    <li>@Html.ActionLink("Avisos", "Index", "Avisos")</li>
+                    <li>@Html.ActionLink("Localizaciones", "Index", "Localizaciones")</li>
+                    <li>@Html.ActionLink("Averias", "Index", "Averias")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -45,6 +47,10 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
