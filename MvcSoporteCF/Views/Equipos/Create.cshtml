@@ -58,7 +58,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FechaCompra, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaCompra, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.FechaCompra, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.JQueryUI().DatepickerFor(model =>
+                model.FechaCompra).ShowButtonPanel(true).ChangeYear(true).ChangeMonth(true)
                 @Html.ValidationMessageFor(model => model.FechaCompra, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -66,7 +68,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FechaAlta, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaAlta, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.FechaAlta, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.JQueryUI().DatepickerFor(model =>
+                model.FechaAlta).ShowButtonPanel(true).ChangeYear(true).ChangeMonth(true)
                 @Html.ValidationMessageFor(model => model.FechaAlta, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -74,7 +78,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.FechaBaja, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaBaja, new { htmlAttributes = new { @class = "form-control" } })
+                @*@Html.EditorFor(model => model.FechaBaja, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.JQueryUI().DatepickerFor(model =>
+                model.FechaBaja).ShowButtonPanel(true).ChangeYear(true).ChangeMonth(true)
                 @Html.ValidationMessageFor(model => model.FechaBaja, "", new { @class = "text-danger" })
             </div>
         </div>

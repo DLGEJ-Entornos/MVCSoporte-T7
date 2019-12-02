@@ -115,3 +115,5 @@ E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.csproj.CoreComp
 E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.csproj.CopyComplete
 E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.dll
 E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.pdb
+E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\bin\JQueryUIHelpers.dll
+E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\bin\JQueryUIHelpers.xml
