@@ -12,6 +12,7 @@ namespace MvcSoporteCF.Models
         [Display(Name = "Descripción")]
         [Required(ErrorMessage = "La descripción del tipo de avería es un campo requerido.")]
         public string Descripcion { get; set; }
-        public virtual ICollection<Aviso> Avisos { get; set; }
+        public virtual ICollection<Aviso> Avisos { get; set; }
+
     }
 }

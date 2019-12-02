@@ -14,6 +14,7 @@ namespace MvcSoporteCF.Models
         [Display(Name = "Correo electrónico")]
         [EmailAddress]
         public string Email { get; set; }
-        public virtual ICollection<Aviso> Avisos { get; set; }
+        public virtual ICollection<Aviso> Avisos { get; set; }
+
     }
 }
