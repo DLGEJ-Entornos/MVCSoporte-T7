@@ -117,3 +117,6 @@ E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.dll
 E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.pdb
 E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\bin\JQueryUIHelpers.dll
 E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\bin\JQueryUIHelpers.xml
+E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.Migrations.InitialCreate.resources
+E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.csproj.GenerateResource.cache
+E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.Migrations.TelefonoFechaEmpleado.resources

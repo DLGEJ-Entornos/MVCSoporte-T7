@@ -14,6 +14,12 @@ namespace MvcSoporteCF.Models
         [Display(Name = "Correo electrónico")]
         [EmailAddress]
         public string Email { get; set; }
+        [Display(Name = "Teléfono")]
+        public string Telefono { get; set; }
+        [Display(Name = "Fecha de nacimiento")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public Nullable<System.DateTime> FechaNacimiento { get; set; }
+
         public virtual ICollection<Aviso> Avisos { get; set; }
 
     }
