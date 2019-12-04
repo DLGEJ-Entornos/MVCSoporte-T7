@@ -15,9 +15,32 @@ namespace MvcSoporteCF.Controllers
         private SoporteContexto db = new SoporteContexto();
 
         // GET: Avisos
-        public ActionResult Index()
+        public ActionResult Index(string strTipoAveria, string strCadenaBusqueda)
         {
             var avisos = db.Avisos.Include(a => a.Empleado).Include(a => a.Equipo).Include(a => a.TipoAveria);
+            avisos = avisos.OrderByDescending(s => s.FechaAviso); // Para ordenar por FechaAviso
+
+
+            // Para presentar los tipos de avería en la vista
+            var lstTipoAveria = new List<string>();
+            var qryTipoAveria = from d in db.TipoAverias
+                                orderby d.Descripcion
+                                select d.Descripcion;
+            lstTipoAveria.AddRange(qryTipoAveria.Distinct());
+            ViewBag.ListaTipoAverias = new SelectList(lstTipoAveria);
+
+            // Para buscar avisos por nombre de empleado en la lista de valores
+            if (!String.IsNullOrEmpty(strCadenaBusqueda))
+            {
+                avisos = avisos.Where(s => s.Empleado.Nombre.Contains(strCadenaBusqueda));
+            }
+
+            // Para presentar los avisos filtrados por tipo de avería
+            if (!string.IsNullOrEmpty(strTipoAveria))
+            {
+                avisos = avisos.Where(x => x.TipoAveria.Descripcion == strTipoAveria);
+            }
+
             return View(avisos.ToList());
         }
 
