@@ -46,7 +46,7 @@ namespace MvcSoporteCF.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,Email")] Empleado empleado)
+        public ActionResult Create([Bind(Include = "Id,Nombre,Email,Telefono,FechaNacimiento")] Empleado empleado)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace MvcSoporteCF.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Email")] Empleado empleado)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,Email,Telefono,FechaNacimiento")] Empleado empleado)
         {
             if (ModelState.IsValid)
             {
