@@ -11,6 +11,7 @@ using PagedList;
 
 namespace MvcSoporteCF.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class AvisosController : Controller
     {
         private SoporteContexto db = new SoporteContexto();

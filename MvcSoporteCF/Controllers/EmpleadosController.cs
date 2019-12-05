@@ -10,11 +10,13 @@ using MvcSoporteCF.Models;
 
 namespace MvcSoporteCF.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class EmpleadosController : Controller
     {
         private SoporteContexto db = new SoporteContexto();
 
         // GET: Empleados
+        [Authorize(Roles = "Administrador")]
         public ActionResult Index()
         {
             return View(db.Empleados.ToList());

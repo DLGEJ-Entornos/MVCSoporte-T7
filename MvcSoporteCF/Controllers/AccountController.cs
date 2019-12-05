@@ -157,7 +157,8 @@ namespace MvcSoporteCF.Controllers
                 {
 
                     // Asignar el rol "Usuario" al registrarse un nuevo usuario
-                    await this.UserManager.AddToRoleAsync(user.Id, "Usuario");
+                    await this.UserManager.AddToRoleAsync(user.Id, "Usuario");
+
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     

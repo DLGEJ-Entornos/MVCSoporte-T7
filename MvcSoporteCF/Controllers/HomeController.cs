@@ -20,6 +20,8 @@ namespace MvcSoporteCF.Controllers
             return View();
         }
 
+
+        [Authorize(Roles = "Administrador")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

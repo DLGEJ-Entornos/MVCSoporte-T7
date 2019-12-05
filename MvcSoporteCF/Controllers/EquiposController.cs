@@ -10,6 +10,7 @@ using MvcSoporteCF.Models;
 
 namespace MvcSoporteCF.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class EquiposController : Controller
     {
         private SoporteContexto db = new SoporteContexto();
