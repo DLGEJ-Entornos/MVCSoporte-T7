@@ -84,7 +84,58 @@
 
     </dl>
 </div>
+
+
+@* Se añade código para presentar los avisos del equipo seleccionado *@
+<div>
+    <h4>Avisos recibidos del equipo</h4>
+    <table class="table">
+        <tr>
+            <td>Descripción</td>
+            <td>Fecha Aviso</td>
+            <td>Fecha Cierre</td>
+            <td>Observaciones</td>
+            <td>Empleado</td>
+            <td>Tipo de avería</td>
+            <td></td>
+        </tr>
+        @foreach (var item in Model.Avisos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaAviso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaCierre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observaciones)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empleado.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoAveria.Descripcion)
+                </td>
+                <td>
+                    <div class="hidden-print">
+                        @Html.ActionLink("Edit", "Edit", "Avisos", new { id = item.Id }, null) |
+                        @Html.ActionLink("Delete", "Delete", "Avisos", new { id = item.Id }, null)
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+@* Se añade para poder imprimir la página *@
+<div class="hidden-print text-center">
+    <a class="btn btn-default" href="javascript:window.print()">Imprimir</a>
+</div>
+
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @* @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) | *@
     @Html.ActionLink("Volver a la Lista", "Index")
 </p>
