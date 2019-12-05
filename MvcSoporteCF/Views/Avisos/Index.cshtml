@@ -1,4 +1,7 @@
-﻿@model IEnumerable<MvcSoporteCF.Models.Aviso>
+﻿@* @model IEnumerable<MvcSoporteCF.Models.Aviso> *@
+@model PagedList.IPagedList<MvcSoporteCF.Models.Aviso>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "Index";
@@ -13,14 +16,15 @@
     @* Para buscar por nombre de empleado en la lista de valores*@
     @using (Html.BeginForm("Index", "Avisos", FormMethod.Get))
     {
-        <p>
-            Tipo de Avería: @Html.DropDownList("strTipoAveria",
-                            (IEnumerable<SelectListItem>)ViewBag.ListaTipoAverias, "Todas")
-            Nombre del empleado: @Html.TextBox("strCadenaBusqueda")
-            <input type="submit" value="Buscar y/o filtrar" />
-        </p>
-    }
-</p>
+    <p>
+        Tipo de Avería: @Html.DropDownList("strTipoAveria",
+(IEnumerable<SelectListItem>)ViewBag.ListaTipoAverias,
+ViewBag.FiltroActual as string)
+        Nombre del empleado: @Html.TextBox("strCadenaBusqueda", ViewBag.BusquedaActual as string)
+        <input type="submit" value="Buscar y/o filtrar" />
+    </p>
+}
+    </p>
 
 
     <table class="table">
@@ -30,23 +34,28 @@
                 Nombre del empleado
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Equipo.CodigoEquipo)
+                @* @Html.DisplayNameFor(model => model.Equipo.CodigoEquipo) *@
+                Equipo
             </th>
             <th>
                 @*@Html.DisplayNameFor(model => model.TipoAveria.Descripcion)*@
                 Tipo de avería
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
+                @* @Html.DisplayNameFor(model => model.Descripcion) *@
+                Descripción
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaAviso)
+                @*@Html.DisplayNameFor(model => model.FechaAviso)*@
+                Fecha de aviso
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaCierre)
+                @*@Html.DisplayNameFor(model => model.FechaCierre)*@
+                Fecha de cierre
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Observaciones)
+                @*@Html.DisplayNameFor(model => model.Observaciones)*@
+                Observaciones
             </th>
             <th></th>
         </tr>
@@ -84,3 +93,10 @@
         }
 
     </table>
+
+    <br />
+    @* Se muestra el número de páginas y el total de páginas *@
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @* Se muestran los botones de paginación mediante el helper PagedListPager *@
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+     new { page, strBusquedaActual = ViewBag.BusquedaActual, strFiltroActual = ViewBag.FiltroActual }))

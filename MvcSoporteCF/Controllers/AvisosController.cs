@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MvcSoporteCF.Models;
+using PagedList;
 
 namespace MvcSoporteCF.Controllers
 {
@@ -15,8 +16,31 @@ namespace MvcSoporteCF.Controllers
         private SoporteContexto db = new SoporteContexto();
 
         // GET: Avisos
-        public ActionResult Index(string strTipoAveria, string strCadenaBusqueda)
+        public ActionResult Index(string strTipoAveria, string strCadenaBusqueda, int? page,
+                                                        string strBusquedaActual, string strFiltroActual)
         {
+            // Para mostrar la primera página cuando se ha introducido una cadena de búsqueda
+            if (strCadenaBusqueda != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                strCadenaBusqueda = strBusquedaActual;
+            }
+            ViewBag.BusquedaActual = strCadenaBusqueda;
+            // Para mostrar la primera página cuando se ha cambiado la selección en el DropDownList
+            if (strTipoAveria != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                strTipoAveria = strFiltroActual;
+            }
+            ViewBag.FiltroActual = strTipoAveria;
+
+
             var avisos = db.Avisos.Include(a => a.Empleado).Include(a => a.Equipo).Include(a => a.TipoAveria);
             avisos = avisos.OrderByDescending(s => s.FechaAviso); // Para ordenar por FechaAviso
 
@@ -26,6 +50,7 @@ namespace MvcSoporteCF.Controllers
             var qryTipoAveria = from d in db.TipoAverias
                                 orderby d.Descripcion
                                 select d.Descripcion;
+            lstTipoAveria.Add("Todas");
             lstTipoAveria.AddRange(qryTipoAveria.Distinct());
             ViewBag.ListaTipoAverias = new SelectList(lstTipoAveria);
 
@@ -38,11 +63,18 @@ namespace MvcSoporteCF.Controllers
             // Para presentar los avisos filtrados por tipo de avería
             if (!string.IsNullOrEmpty(strTipoAveria))
             {
-                avisos = avisos.Where(x => x.TipoAveria.Descripcion == strTipoAveria);
-            }
-
-            return View(avisos.ToList());
+                if (strTipoAveria != "Todas")
+                {
+                    avisos = avisos.Where(x => x.TipoAveria.Descripcion == strTipoAveria);
+                }
+            }
+            // Características de la paginación
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(avisos.ToPagedList(pageNumber, pageSize));
+            // return View(avisos.ToList());
         }
+    
 
         // GET: Avisos/Details/5
         public ActionResult Details(int? id)

@@ -120,3 +120,7 @@ E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\bin\JQueryUIHelpers.xml
 E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.Migrations.InitialCreate.resources
 E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.csproj.GenerateResource.cache
 E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\obj\Debug\MvcSoporteCF.Migrations.TelefonoFechaEmpleado.resources
+E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\bin\PagedList.dll
+E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\bin\PagedList.Mvc.dll
+E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\bin\PagedList.xml
+E:\SERVIDOR\tema7\MVCSoporte\MvcSoporteCF\bin\PagedList.Mvc.xml
