@@ -96,7 +96,7 @@ ViewBag.FiltroActual as string)
 
     <br />
     @* Se muestra el número de páginas y el total de páginas *@
-    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
     @* Se muestran los botones de paginación mediante el helper PagedListPager *@
     @Html.PagedListPager(Model, page => Url.Action("Index",
      new { page, strBusquedaActual = ViewBag.BusquedaActual, strFiltroActual = ViewBag.FiltroActual }))

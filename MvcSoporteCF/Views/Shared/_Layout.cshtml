@@ -20,18 +20,31 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("MvcSoporteMVC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Empleados", "Index", "Empleados")</li>
-                    <li>@Html.ActionLink("Equipos", "Index", "Equipos")</li>
-                    <li>@Html.ActionLink("Avisos", "Index", "Avisos")</li>
-                    <li>@Html.ActionLink("Localizaciones", "Index", "Localizaciones")</li>
-                    <li>@Html.ActionLink("Averias", "Index", "TipoAverias")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Usuario"))
+                        {
+                            <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                        }
+                        if (User.IsInRole("Administrador"))
+                        {
+                            <li>@Html.ActionLink("Empleados", "Index", "Empleados")</li>
+                            <li>@Html.ActionLink("Equipos", "Index", "Equipos")</li>
+                            <li>@Html.ActionLink("Avisos", "Index", "Avisos")</li>
+                            <li>@Html.ActionLink("Localizaciones", "Index", "Localizaciones")</li>
+                            <li>@Html.ActionLink("Averias", "Index", "TipoAverias")</li>
+                        }
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
