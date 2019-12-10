@@ -25,6 +25,10 @@ namespace MvcSoporteCF.Models
         {
         }
 
+        // Se agrega de forma explícita como DbSet para tener acceso directamente a la
+        // tabla AspNetUserRoles
+        public DbSet<IdentityUserRole> UserRoles { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

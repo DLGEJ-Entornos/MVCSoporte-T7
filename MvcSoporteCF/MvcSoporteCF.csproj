@@ -207,6 +207,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SoporteContexto.cs" />
     <Compile Include="Models\TipoAveria.cs" />
+    <Compile Include="Models\UsuarioConRol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
