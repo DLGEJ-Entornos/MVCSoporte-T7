@@ -34,7 +34,7 @@ namespace MvcSoporteCF.Controllers
         }
 
 
-        [Authorize(Roles = "Usuario")]
+        //[Authorize(Roles = "Usuario")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

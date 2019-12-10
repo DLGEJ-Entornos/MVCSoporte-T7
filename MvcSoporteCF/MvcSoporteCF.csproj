@@ -183,6 +183,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalizacionesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MisAvisosController.cs" />
     <Compile Include="Controllers\MisDatosController.cs" />
     <Compile Include="Controllers\TipoAveriasController.cs" />
     <Compile Include="Global.asax.cs">
@@ -330,6 +331,12 @@
     <Content Include="Views\Empleados\Edit.cshtml" />
     <Content Include="Views\Empleados\Index.cshtml" />
     <Content Include="Views\MisDatos\Create.cshtml" />
+    <Content Include="Views\MisDatos\Edit.cshtml" />
+    <Content Include="Views\MisAvisos\Create.cshtml" />
+    <Content Include="Views\MisAvisos\Delete.cshtml" />
+    <Content Include="Views\MisAvisos\Details.cshtml" />
+    <Content Include="Views\MisAvisos\Edit.cshtml" />
+    <Content Include="Views\MisAvisos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
