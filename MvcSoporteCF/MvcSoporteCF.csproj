@@ -186,6 +186,7 @@
     <Compile Include="Controllers\MisAvisosController.cs" />
     <Compile Include="Controllers\MisDatosController.cs" />
     <Compile Include="Controllers\TipoAveriasController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -338,6 +339,8 @@
     <Content Include="Views\MisAvisos\Details.cshtml" />
     <Content Include="Views\MisAvisos\Edit.cshtml" />
     <Content Include="Views\MisAvisos\Index.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Usuarios\CrearAdministrador.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

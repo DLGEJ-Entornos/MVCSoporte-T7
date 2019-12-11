@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MvcSoporteCF.Models.UsuarioConRol>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Usuarios</h2>
+
+<p>
+    @Html.ActionLink("Crear Administrador", "CrearAdministrador")
+</p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Usuario
+        </th>
+        <th>
+            Nombre de Usuario
+        </th>
+        <th>
+            Rol
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelIdtem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelIdtem => item.RolDelUsuario)
+        </tr>
+    }
+</table>
